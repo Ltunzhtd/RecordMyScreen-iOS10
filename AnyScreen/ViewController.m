@@ -21,6 +21,8 @@
     BOOL bRecording;
     CSScreenRecorder *_screenRecorder;
     MPVolumeView *volumeView;
+    id routerController;
+    NSString *airplayName;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *btnRecord;
@@ -32,6 +34,33 @@
 
 
 @implementation ViewController
+
+- (void)setupAirplayMonitoring
+{
+    if (!routerController) {
+        routerController = [NSClassFromString(@"MPAVRoutingController") new];
+        [routerController setValue:self forKey:@"delegate"];
+        [routerController setValue:[NSNumber numberWithLong:2] forKey:@"discoveryMode"];
+    }
+}
+
+-(void)routingControllerAvailableRoutesDidChange:(id)arg1{
+    if (airplayName == nil) {
+        return;
+    }
+    NSArray *availableRoutes = [routerController valueForKey:@"availableRoutes"];
+    for (id router in availableRoutes) {
+        NSString *routerName = [router valueForKey:@"routeName"];
+        if ([routerName rangeOfString:airplayName].length >0) {
+            BOOL picked = [[router valueForKey:@"picked"] boolValue];
+            if (picked == NO) {
+                [routerController performSelector:@selector(pickRoute:) withObject:router];
+            }
+            return;
+        }
+    }
+}
+
 
 - (NSString*)generateMP4Name
 {
@@ -84,6 +113,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    // automatic airplay connection
+    airplayName = @"XBMC-GAMEBOX(XinDawn)";
+    [self setupAirplayMonitoring];
+    
     
     bRecording = NO;
     [self.btnRecord setTitle:NSLocalizedString(@"STR_PREPARE",nil) forState:UIControlStateNormal];
@@ -163,7 +196,8 @@
     [super viewWillLayoutSubviews];
     for (UIView *subView in [volumeView subviews])
     {
-        if ([subView isKindOfClass:[UIButton class]])
+        /*
+       if ([subView isKindOfClass:[UIButton class]])
         {
             CGRect rect;
             rect = self.mpView.frame;
@@ -179,7 +213,7 @@
             [(UIButton*)subView setFrame:rect];
             [(UIButton*)subView setBackgroundColor:  [UIColor colorWithRed:00.0/255.0 green:00.0/255.0 blue:100.0/255.0 alpha:1.0]];
             
-        }
+        }*/
     }
     
 
