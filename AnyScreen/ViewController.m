@@ -89,6 +89,19 @@
     bRecording = NO;
     [self.btnRecord setTitle:NSLocalizedString(@"STR_PREPARE",nil) forState:UIControlStateNormal];
 //    [self.mpView setHidden:NO];
+    NSString *airplayNameiPhone = @"iPhone";
+    NSArray *availableRoutes = [routerController valueForKey:@"availableRoutes"];
+    for (id router in availableRoutes) {
+        NSString *routerName = [router valueForKey:@"routeName"];
+        if ([routerName rangeOfString:airplayNameiPhone].length >0) {
+            BOOL picked = [[router valueForKey:@"picked"] boolValue];
+            //usleep(1000*1000);
+            if (picked == NO) {
+                [routerController performSelector:@selector(pickRoute:) withObject:router];
+            }
+            return;
+        }
+    }
 }
 
 - (IBAction)toggleRecord:(id)sender {
