@@ -89,6 +89,8 @@
     bRecording = NO;
     [self.btnRecord setTitle:NSLocalizedString(@"STR_PREPARE",nil) forState:UIControlStateNormal];
 //    [self.mpView setHidden:NO];
+    
+    
     NSString *airplayNameiPhone = @"iPhone";
     NSArray *availableRoutes = [routerController valueForKey:@"availableRoutes"];
     for (id router in availableRoutes) {
