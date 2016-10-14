@@ -440,7 +440,7 @@ void audio_stop(void *cls)
     
     
     
-    int ret = XinDawn_StartMediaServer("Xindawn",1920, 1080, 60, 47000,7100,"000000000", &ao);
+    int ret = XinDawn_StartMediaServer("XBMC-GAMEBOX(XinDawn)",1920, 1080, 60, 47000,7100,"000000000", &ao);
     
     
     printf("=====ret=%d========\n",ret);

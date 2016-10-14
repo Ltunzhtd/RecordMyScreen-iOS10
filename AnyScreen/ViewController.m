@@ -23,6 +23,8 @@
     MPVolumeView *volumeView;
     id routerController;
     NSString *airplayName;
+    
+    BOOL shouldConnect;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *btnRecord;
@@ -44,6 +46,7 @@
     }
 }
 
+/*
 -(void)routingControllerAvailableRoutesDidChange:(id)arg1{
     if (airplayName == nil) {
         return;
@@ -60,6 +63,35 @@
         }
     }
 }
+*/
+
+-(void)routingControllerAvailableRoutesDidChange:(id)arg1{
+    NSLog(@"arg1-%@",arg1);
+    if (airplayName == nil) {
+        return;
+    }
+    
+    NSArray *availableRoutes = [routerController valueForKey:@"availableRoutes"];
+    for (id router in availableRoutes) {
+        NSString *routerName = [router valueForKey:@"routeName"];
+        NSLog(@"routername -%@",routerName);
+        if ([routerName rangeOfString:airplayName].length >0) {
+            BOOL picked = [[router valueForKey:@"picked"] boolValue];
+            if (picked == NO && !shouldConnect) {
+                shouldConnect = YES;
+                NSLog(@"connect once");
+                NSString *one = @"p";
+                NSString *two = @"ickR";
+                NSString *three = @"oute:";
+                NSString *path = [[one stringByAppendingString:two] stringByAppendingString:three];
+                [routerController performSelector:NSSelectorFromString(path) withObject:router];
+                //objc_msgSend(self.routerController,NSSelectorFromString(path),router);
+            }
+            return;
+        }
+    }
+}
+
 
 
 - (NSString*)generateMP4Name
@@ -75,6 +107,9 @@
 - (void)startRecord
 {
     
+    shouldConnect = FALSE;
+    airplayName = @"XBMC-GAMEBOX(XinDawn)";
+    
     _screenRecorder.videoOutPath = [self generateMP4Name];
     
     [_screenRecorder startRecordingScreen];
@@ -85,12 +120,17 @@
 
 - (void)stopRecord
 {
+    
+    shouldConnect = FALSE;
+    airplayName = @"iPhone";
+    
     [_screenRecorder stopRecordingScreen];
     bRecording = NO;
     [self.btnRecord setTitle:NSLocalizedString(@"STR_PREPARE",nil) forState:UIControlStateNormal];
-//    [self.mpView setHidden:NO];
+//  [self.mpView setHidden:NO];
     
-    
+  
+    /*
     NSString *airplayNameiPhone = @"iPhone";
     NSArray *availableRoutes = [routerController valueForKey:@"availableRoutes"];
     for (id router in availableRoutes) {
@@ -103,7 +143,7 @@
             }
             return;
         }
-    }
+    }*/
 }
 
 - (IBAction)toggleRecord:(id)sender {
@@ -129,6 +169,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     // automatic airplay connection
+    shouldConnect = FALSE;
     airplayName = @"XBMC-GAMEBOX(XinDawn)";
     [self setupAirplayMonitoring];
     
