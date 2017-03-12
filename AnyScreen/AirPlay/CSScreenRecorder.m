@@ -341,11 +341,12 @@ void video_process(void *cls,const void *buffer, int buflen, int payloadtype, do
             
         }
 #endif
+        //kdd
+    [[CSScreenRecorder sharedCSScreenRecorder].delegate screenRecorder:[CSScreenRecorder sharedCSScreenRecorder] recordingTimeChanged:timestamp];
         
     }
     // printf("=====video====%f====\n",timestamp);
-    //kdd
-    [[CSScreenRecorder sharedCSScreenRecorder].delegate screenRecorder:[CSScreenRecorder sharedCSScreenRecorder] recordingTimeChanged:timestamp];
+
     
 }
 
