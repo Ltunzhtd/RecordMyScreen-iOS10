@@ -118,6 +118,20 @@
      [self.controlBarView addGestureRecognizer:tapGestureNone];
      self.title = self.movieName;  //设置标题
 //     [self customUI];
+     UIBarButtonItem* rightBar = [[UIBarButtonItem alloc]initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(share)];
+     self.navigationItem.rightBarButtonItem = rightBar;
+}
+
+- (void)share
+{
+    NSString *movieFile = self.stringName;
+    
+    // Setup a PlayerItem and a Player
+    NSURL* movieURL = [NSURL fileURLWithPath:movieFile];
+    NSArray *activityItems = @[movieURL];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    [activityViewController setValue:@"Video" forKey:@"subject"];
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
