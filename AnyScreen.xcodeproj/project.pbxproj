@@ -12,9 +12,6 @@
 		787859D31CD0A93C00D5818D /* CSScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 787859D01CD0A93C00D5818D /* CSScreenRecorder.m */; };
 		787859D41CD0A93C00D5818D /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 787859D21CD0A93C00D5818D /* Utilities.m */; };
 		787859F41CD0CA7500D5818D /* libmp4v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 787859F01CD0CA7500D5818D /* libmp4v2.a */; };
-		787859F51CD0CA7500D5818D /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 787859F11CD0CA7500D5818D /* libintl.a */; };
-		787859F61CD0CA7500D5818D /* libairplaysdk-2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 787859F21CD0CA7500D5818D /* libairplaysdk-2.a */; };
-		787859F71CD0CA7500D5818D /* libairplaysdk-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 787859F31CD0CA7500D5818D /* libairplaysdk-1.a */; };
 		787859F91CD0CC0E00D5818D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 787859F81CD0CC0E00D5818D /* libiconv.tbd */; };
 		787859FC1CD0CC2900D5818D /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 787859FA1CD0CC2900D5818D /* libstdc++.6.tbd */; };
 		787859FD1CD0CC2900D5818D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 787859FB1CD0CC2900D5818D /* libstdc++.tbd */; };
@@ -33,6 +30,7 @@
 		78B786131CE71B7600DEF740 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B786111CE71B7600DEF740 /* pause.png */; };
 		78DDE9041CE7673900A5A845 /* FileListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DDE9021CE7673900A5A845 /* FileListTableViewCell.m */; };
 		78DDE9051CE7673900A5A845 /* FileListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DDE9031CE7673900A5A845 /* FileListTableViewCell.xib */; };
+		BA1CC8FA20822F01005A870B /* libxindawnsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1CC8F920822F01005A870B /* libxindawnsdk.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +64,6 @@
 		787859D11CD0A93C00D5818D /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		787859D21CD0A93C00D5818D /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		787859F01CD0CA7500D5818D /* libmp4v2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmp4v2.a; path = AnyScreen/fat/lib/libmp4v2.a; sourceTree = "<group>"; };
-		787859F11CD0CA7500D5818D /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = AnyScreen/fat/lib/libintl.a; sourceTree = "<group>"; };
-		787859F21CD0CA7500D5818D /* libairplaysdk-2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libairplaysdk-2.a"; path = "AnyScreen/fat/lib/libairplaysdk-2.a"; sourceTree = "<group>"; };
-		787859F31CD0CA7500D5818D /* libairplaysdk-1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libairplaysdk-1.a"; path = "AnyScreen/fat/lib/libairplaysdk-1.a"; sourceTree = "<group>"; };
 		787859F81CD0CC0E00D5818D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		787859FA1CD0CC2900D5818D /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 		787859FB1CD0CC2900D5818D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -99,6 +94,7 @@
 		78DDE9011CE7673900A5A845 /* FileListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListTableViewCell.h; sourceTree = "<group>"; };
 		78DDE9021CE7673900A5A845 /* FileListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListTableViewCell.m; sourceTree = "<group>"; };
 		78DDE9031CE7673900A5A845 /* FileListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileListTableViewCell.xib; sourceTree = "<group>"; };
+		BA1CC8F920822F01005A870B /* libxindawnsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libxindawnsdk.a; path = AnyScreen/fat/lib/libxindawnsdk.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,13 +102,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1CC8FA20822F01005A870B /* libxindawnsdk.a in Frameworks */,
 				787859FC1CD0CC2900D5818D /* libstdc++.6.tbd in Frameworks */,
 				787859FD1CD0CC2900D5818D /* libstdc++.tbd in Frameworks */,
 				787859F91CD0CC0E00D5818D /* libiconv.tbd in Frameworks */,
 				787859F41CD0CA7500D5818D /* libmp4v2.a in Frameworks */,
-				787859F51CD0CA7500D5818D /* libintl.a in Frameworks */,
-				787859F61CD0CA7500D5818D /* libairplaysdk-2.a in Frameworks */,
-				787859F71CD0CA7500D5818D /* libairplaysdk-1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,13 +152,11 @@
 		7889D30A1CD0D745006B0204 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				BA1CC8F920822F01005A870B /* libxindawnsdk.a */,
 				787859FA1CD0CC2900D5818D /* libstdc++.6.tbd */,
 				787859FB1CD0CC2900D5818D /* libstdc++.tbd */,
 				787859F81CD0CC0E00D5818D /* libiconv.tbd */,
 				787859F01CD0CA7500D5818D /* libmp4v2.a */,
-				787859F11CD0CA7500D5818D /* libintl.a */,
-				787859F21CD0CA7500D5818D /* libairplaysdk-2.a */,
-				787859F31CD0CA7500D5818D /* libairplaysdk-1.a */,
 			);
 			name = lib;
 			path = ..;

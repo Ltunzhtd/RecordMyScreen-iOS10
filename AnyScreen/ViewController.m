@@ -187,7 +187,8 @@
     // automatic airplay connection
     shouldConnect = FALSE;
     airplayName = @"XBMC-GAMEBOX(XinDawn)";
-    [self setupAirplayMonitoring];
+    if([UIDevice currentDevice].systemVersion.floatValue < 11.0f)
+        [self setupAirplayMonitoring];
     
     
     bRecording = NO;
